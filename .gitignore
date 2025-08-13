@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 
 # Build output
 dist/
@@ -8,18 +8,18 @@ dist/
 .env.local
 .env.*.local
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Firebase (emulators and debug logs)
+# Firebase config (root-level only)
 .firebase/
 firebase-debug.log
 firestore-debug.log
 storage-debug.log
 
+/firebase.json
+/.firebaserc
+/firestore.rules
+/firestore.indexes.json
+/storage.rules
+/database.rules.json
 # Test coverage
 coverage/
 
@@ -27,6 +27,14 @@ coverage/
 .vercel
 .netlify
 
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
 # Editor/OS
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
