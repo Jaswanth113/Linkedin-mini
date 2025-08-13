@@ -14,6 +14,19 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Firebase (emulators and debug logs)
+.firebase/
+firebase-debug.log
+firestore-debug.log
+storage-debug.log
+
+# Test coverage
+coverage/
+
+# Deployment platform folders
+.vercel
+.netlify
+
 # Editor/OS
 .DS_Store
 Thumbs.db
