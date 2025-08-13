@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --linkedin-blue: #0a66c2;
+  --linkedin-blue-hover: #004182;
+  --linkedin-blue-light: #e8f3ff;
+  --linkedin-gray-50: #f3f2ef;
+  --linkedin-gray-100: #e9e5df;
+  --linkedin-gray-200: #d9d9d9;
+  --linkedin-gray-300: #c7c1b7;
+  --linkedin-gray-400: #a0a0a0;
+  --linkedin-gray-500: #666666;
+  --linkedin-gray-600: #424242;
+  --linkedin-gray-700: #1d1d1d;
+  --linkedin-gray-800: #191919;
+  --linkedin-gray-900: #000000;
+  --linkedin-white: #ffffff;
+  --linkedin-red: #d11124;
+  --linkedin-green: #057642;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--linkedin-gray-50);
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.33333;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* LinkedIn-style scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--linkedin-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--linkedin-gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--linkedin-gray-400);
+}
+
+/* Custom utility classes */
+@layer components {
+  .linkedin-btn-primary {
+    @apply bg-[#0a66c2] hover:bg-[#004182] text-white font-semibold py-2 px-4 rounded-full transition-all duration-200 border border-[#0a66c2] hover:border-[#004182] text-sm;
+  }
+  
+  .linkedin-btn-secondary {
+    @apply bg-transparent hover:bg-[#f3f2ef] text-[#0a66c2] border border-[#0a66c2] font-semibold py-2 px-4 rounded-full transition-all duration-200 text-sm;
+  }
+  
+  .linkedin-btn-ghost {
+    @apply bg-transparent hover:bg-[#f3f2ef] text-[#666666] hover:text-[#000000] font-medium py-2 px-4 rounded transition-all duration-200 text-sm;
+  }
+  
+  .linkedin-card {
+    @apply bg-white rounded-lg border border-[#d9d9d9] shadow-sm;
+  }
+  
+  .linkedin-input {
+    @apply w-full px-3 py-2 border border-[#d9d9d9] rounded focus:outline-none focus:ring-2 focus:ring-[#0a66c2] focus:border-[#0a66c2] text-sm bg-white;
+  }
+
+  .linkedin-textarea {
+    @apply w-full px-3 py-2 border border-[#d9d9d9] rounded focus:outline-none focus:ring-2 focus:ring-[#0a66c2] focus:border-[#0a66c2] text-sm bg-white resize-none;
+  }
+
+  .linkedin-nav-item {
+    @apply flex flex-col items-center px-3 py-2 text-xs font-normal text-[#666666] hover:text-[#000000] transition-colors cursor-pointer min-w-[80px];
+  }
+
+  .linkedin-nav-item.active {
+    @apply text-[#000000];
+  }
+
+  .linkedin-profile-header {
+    @apply relative bg-white rounded-lg border border-[#d9d9d9] shadow-sm overflow-hidden;
+  }
+
+  .linkedin-profile-cover {
+    @apply relative h-48 bg-gradient-to-r from-[#0a66c2] to-[#004182];
+  }
+
+  .linkedin-profile-picture {
+    @apply bg-[#0a66c2] rounded-full flex items-center justify-center border-4 border-white shadow-lg;
+  }
+
+  .linkedin-section {
+    @apply bg-white rounded-lg border border-[#d9d9d9] shadow-sm p-6;
+  }
+
+  .linkedin-section-header {
+    @apply flex items-center justify-between mb-4;
+  }
+
+  .linkedin-section-title {
+    @apply text-lg font-semibold text-[#000000];
+  }
+
+  .linkedin-skill-tag {
+    @apply px-3 py-1 bg-[#f3f2ef] text-[#000000] text-sm rounded-full font-medium;
+  }
+
+  .linkedin-post-action {
+    @apply flex items-center space-x-2 px-4 py-2 rounded text-[#666666] hover:bg-[#f3f2ef] transition-colors flex-1 justify-center cursor-pointer;
+  }
+
+  .linkedin-post-action.active {
+    @apply text-[#0a66c2];
+  }
+
+  /* Text utilities */
+  .text-linkedin-primary {
+    @apply text-[#000000];
+  }
+
+  .text-linkedin-secondary {
+    @apply text-[#666666];
+  }
+
+  .text-linkedin-blue {
+    @apply text-[#0a66c2];
+  }
+
+  /* Hover effects */
+  .hover-linkedin {
+    @apply hover:bg-[#f3f2ef] transition-colors duration-200;
+  }
+
+  /* LinkedIn specific spacing */
+  .linkedin-spacing {
+    @apply space-y-2;
+  }
+
+  /* Profile stats */
+  .linkedin-stat {
+    @apply text-xs text-[#666666] hover:text-[#0a66c2] hover:underline cursor-pointer;
+  }
+
+  /* Feed styles */
+  .linkedin-feed-item {
+    @apply linkedin-card mb-2;
+  }
+
+  /* Form styles */
+  .linkedin-form-group {
+    @apply space-y-1;
+  }
+
+  .linkedin-form-label {
+    @apply block text-sm font-medium text-[#000000] mb-1;
+  }
+
+  /* Animation utilities */
+  .animate-in {
+    animation: slideIn 0.2s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive text sizing */
+  .text-responsive {
+    @apply text-sm;
+  }
+  
+  /* Text overflow safety */
+  .text-overflow-safe {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* LinkedIn specific colors */
+  .bg-linkedin-gray {
+    background-color: var(--linkedin-gray-50);
+  }
+
+  .border-linkedin {
+    border-color: var(--linkedin-gray-200);
+  }
+
+  /* Focus states */
+  .focus-linkedin {
+    @apply focus:outline-none focus:ring-2 focus:ring-[#0a66c2] focus:ring-opacity-50;
+  }
+}
+
+/* Custom scrollbar for feed */
+.feed-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.feed-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.feed-container::-webkit-scrollbar-thumb {
+  background: var(--linkedin-gray-300);
+  border-radius: 3px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* LinkedIn specific shadows */
+.shadow-linkedin {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-linkedin-hover {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
