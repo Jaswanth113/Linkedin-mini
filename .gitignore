@@ -1,3 +1,4 @@
+# Dependencies
 node_modules/
 
 # Build output
@@ -8,24 +9,27 @@ dist/
 .env.local
 .env.*.local
 
-# Firebase config (root-level only)
+# Firebase files (root-level only)
 .firebase/
 firebase-debug.log
 firestore-debug.log
 storage-debug.log
-
 /firebase.json
 /.firebaserc
 /firestore.rules
 /firestore.indexes.json
 /storage.rules
 /database.rules.json
+
+# Keep source firebase config
+!src/firebase/config.js
+
 # Test coverage
 coverage/
 
 # Deployment platform folders
-.vercel
-.netlify
+.vercel/
+.netlify/
 
 # Logs
 npm-debug.log*
@@ -33,8 +37,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Editor/OS
+# Editor/IDE settings
 .vscode/
 .idea/
+
+# OS-specific files
 .DS_Store
 Thumbs.db
